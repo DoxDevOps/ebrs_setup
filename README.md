@@ -2,7 +2,7 @@ EBRS SETUP.
 
 NOTE: ruby v2.1.2 required
 
-1. Clone application
+1. Clone application:
 	git clone https://github.com/HISMalawi/ebrs-touch.git ebrs_facility
 
 2. git checkout optimisation
