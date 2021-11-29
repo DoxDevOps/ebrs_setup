@@ -35,7 +35,7 @@ cd $WORKSPACE/ebrs_facility && git pull origin optimization'''
         sh '[ -f "$WORKSPACE/ebrs_facility/config/secrets.yml" ] && echo "secrets.yml already exists." || cp $WORKSPACE/ebrs_facility/config/secrets.yml.example $WORKSPACE/ebrs_facility/config/secrets.yml'
         sh '[ -f "$WORKSPACE/ebrs_facility/config/settings.yml" ] && echo "settings.yml already exists." || cp $WORKSPACE/ebrs_facility/config/settings.yml.example $WORKSPACE/ebrs_facility/config/settings.yml'
         echo 'Editing settings.yml'
-        sh '#sed -i \'s/\\/home\\/usr\\/barcodes\\//\\/var\\/www\\/edrs_facility\\/config\\//; s/\\/home\\/usr\\/certificates\\//\\/var\\/www\\/edrs_facility\\/config\\//; s/\\/home\\/usr\\/dispatch\\//\\/var\\/www\\/edrs_facility\\/config\\//; s/\\/home\\/usr\\/qrcodes\\//\\/var\\/www\\/edrs_facility\\/config\\//; s/site_type\\: dc/site_type\\: facility/\' $WORKSPACE/edrs_facility/config/settings.yml'
+        sh 'sed -i \'s/\\/var\\/www\\/barcodes\\//\\/var\\/www\\/edrs_facility\\/config\\//; s/\\/var\\/www\\/certificates\\//\\/var\\/www\\/edrs_facility\\/config\\//; s/\\/home\\/usr\\/dispatch\\//\\/var\\/www\\/edrs_facility\\/config\\//; s/enable_printing_when_hq_is_offline/enable_printing_when_hq_is_offline\\:/\' $WORKSPACE/edrs_facility/config/settings.yml'
       }
     }
 
